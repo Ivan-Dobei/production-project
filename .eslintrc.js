@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-undef
 module.exports = {
    'env': {
       'browser': true,
@@ -32,6 +31,7 @@ module.exports = {
       'max-len': ['error', {'code': 120, 'ignoreComments': true}],
       'comma-dangle': ['error', 'always-multiline'],
       'semi': ['warn', 'always'],
-
+      'no-undef': 'off',
+      'react/display-name': 'warn',
    },
 };
