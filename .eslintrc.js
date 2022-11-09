@@ -19,6 +19,7 @@ module.exports = {
    'plugins': [
       'react',
       '@typescript-eslint',
+      'react-hooks',
    ],
    'rules': {
       'no-console': 'warn',
@@ -35,5 +36,7 @@ module.exports = {
       'react/display-name': 'warn',
       '@typescript-eslint/no-var-requires': 0,
       'no-use-before-define': ['error', { 'variables': false }],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'error',
    },
 };

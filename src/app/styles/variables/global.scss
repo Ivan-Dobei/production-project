@@ -15,4 +15,12 @@
    --navbar-height: 50px;
    --sidebar-width: 300px;
    --sidebar-width-collapsed: 80px;
+
+   // colors
+   --overlay-color: #0009;
+   --white-color: #fff;
+
+   // z-indexes
+   --modal-z-index-close: 0;
+   --modal-z-index-open: 10;
 }
