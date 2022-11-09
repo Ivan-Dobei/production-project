@@ -6,8 +6,30 @@
    position: relative;
 }
 
-.collapse {
-   width: var(--sidebar-width-collapsed);
+.links {
+   max-width: 160px;
+   display: flex;
+   flex-direction: column;
+   margin: 15px 0 0 30px;
+}
+
+.link {
+   display: flex;
+   align-items: center;
+}
+
+.link:not(:last-child) {
+   margin-bottom: 15px;
+}
+
+.icons {
+   fill: var(--inverted-primary-color);
+   margin-right: 15px;
+}
+
+.linkText {
+   opacity: 1;
+   transition: opacity 0.1s ease-in;
 }
 
 .switchers {
@@ -21,4 +43,24 @@
 
 .langSwitcher {
    margin-left: 10px;
+}
+
+.collapseBtn {
+   position: absolute;
+   right: -32px;
+   bottom: 32px;
+}
+
+.collapse {
+   width: var(--sidebar-width-collapsed);
+
+   .switchers {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .linkText {
+      opacity: 0;
+      width: 0;
+   }
 }

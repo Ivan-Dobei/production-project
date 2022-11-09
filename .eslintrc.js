@@ -33,5 +33,7 @@ module.exports = {
       'semi': ['warn', 'always'],
       'no-undef': 'off',
       'react/display-name': 'warn',
+      '@typescript-eslint/no-var-requires': 0,
+      'no-use-before-define': ['error', { 'variables': false }],
    },
 };

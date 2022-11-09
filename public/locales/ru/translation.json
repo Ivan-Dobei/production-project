@@ -1,7 +1,8 @@
 {
   "Welcome to React": "Добро пожаловать в React",
   "Language": "Руский",
-  "Main page": "Главная страница",
+  "Main page": "Главная",
   "About page": "О сайте",
-  "Page not found": "Страница не найдена"
+  "Page not found": "Страница не найдена",
+  "ShortLanguage": "Ru"
 }

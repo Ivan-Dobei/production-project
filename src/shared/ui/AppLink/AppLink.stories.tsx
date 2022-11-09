@@ -22,10 +22,10 @@ Primary.args = {
    children: 'Text',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Inverted = Template.bind({});
+Inverted.args = {
    children: 'Text',
-   theme: LinkTheme.SECONDARY,
+   theme: LinkTheme.INVERTED,
 };
 
 export const PrimaryDark = Template.bind({});
@@ -34,10 +34,10 @@ PrimaryDark.args = {
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const SecondaryDark = Template.bind({});
-SecondaryDark.args = {
+export const InvertedDark = Template.bind({});
+InvertedDark.args = {
    children: 'Text',
-   theme: LinkTheme.SECONDARY,
+   theme: LinkTheme.INVERTED,
 };
-SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+InvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
 
