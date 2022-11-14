@@ -20,9 +20,9 @@
 }
 
 .content {
-   padding: 20px;
+   padding: 40px 20px;
    border-radius: 10px;
-   max-width: 350px;
+   max-width: 50%;
    transform: scale(0.5);
    transition: transform 0.3s ease-in;
    background-color: var(--bg-color);

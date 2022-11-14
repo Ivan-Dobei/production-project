@@ -2,8 +2,8 @@ import {useState} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './NavBar.module.scss';
 import {useTranslation} from 'react-i18next';
-import {Modal} from 'shared/ui/Modal/Modal';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {LoginModal} from 'features/AuthByUserName';
 
 interface NavBarProps {
     className?: string
@@ -27,15 +27,10 @@ export const NavBar = ({className}: NavBarProps) => {
          >
             {t('Login')}
          </Button>
-         <Modal
+         <LoginModal
             isOpen={isAuthModal}
             onClose={onToggleModal}
-         >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus ad alias aperiam aspernatur blanditiis consequuntur
-            cupiditate, distinctio error, nihil non provident quam quas reprehenderit rerum similique ut,
-            voluptates. Repudiandae, vitae.
-         </Modal>
+         />
       </div>
    );
 };

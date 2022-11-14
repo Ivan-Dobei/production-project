@@ -1,14 +1,14 @@
-import React, {ReactNode, useCallback, useEffect, useRef, useState} from 'react';
+import React, {lazy, ReactNode, useCallback, useEffect, useRef, useState} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import {Portal} from 'shared/ui/Portal/Portal';
-import {useTheme} from 'app/providers/ThemeProvider';
 
 interface ModalProps {
     className?: string;
     children: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 300;
@@ -22,6 +22,7 @@ export const Modal = (props: ModalProps) => {
       onClose,
    } = props;
 
+   const [isMounted, setIsMounted] = useState(false);
    const [isModalClose, setIsModalClose] = useState(false);
    const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -42,6 +43,12 @@ export const Modal = (props: ModalProps) => {
    }, [closeHandler]);
 
    useEffect(() => {
+      if (isOpen) {
+         setIsMounted(true);
+      }
+   }, [isOpen]);
+
+   useEffect(() => {
       window.addEventListener('keydown', onKeyDown);
 
       return () => {
@@ -58,6 +65,10 @@ export const Modal = (props: ModalProps) => {
       [cls.open]: isOpen,
       [cls.close]: isModalClose,
    };
+
+   if (lazy && !isMounted) {
+      return null;
+   }
 
    return (
       <Portal>
