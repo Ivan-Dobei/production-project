@@ -1,0 +1,13 @@
+.PageError {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: var(--bg-color);
+}
+
+.title {
+   color: var(--primary-color);
+   margin-bottom: 20px;
+}
