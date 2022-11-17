@@ -6,7 +6,6 @@ import {useTranslation} from 'react-i18next';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUserName';
 import {getUserAuthData, userActions} from 'entities/User';
-import {loginActions} from 'features/AuthByUserName/model/slice/loginSlice';
 
 interface NavBarProps {
     className?: string
@@ -25,10 +24,7 @@ export const NavBar = ({className}: NavBarProps) => {
 
    const onCloseModal = useCallback(() => {
       setIsAuthModal(false);
-      dispatch(loginActions.setError(''));
-      dispatch(loginActions.setUsername(''));
-      dispatch(loginActions.setPassword(''));
-   }, [dispatch]);
+   }, []);
 
    const logout = useCallback(() => {
       dispatch(userActions.logout());
@@ -58,10 +54,13 @@ export const NavBar = ({className}: NavBarProps) => {
          >
             {t('Login')}
          </Button>
-         <LoginModal
-            isOpen={isAuthModal}
-            onClose={onCloseModal}
-         />
+         {
+            isAuthModal &&
+            <LoginModal
+               isOpen={isAuthModal}
+               onClose={onCloseModal}
+            />
+         }
       </div>
    );
 };
