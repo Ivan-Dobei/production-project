@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Ivan",
+    "lastname": "Dobei",
+    "age": 20,
+    "currency": "UAH",
+    "country": "Ukraine",
+    "city": "Lvov",
+    "username": "admin",
+    "avatar": "link"
+  }
 }

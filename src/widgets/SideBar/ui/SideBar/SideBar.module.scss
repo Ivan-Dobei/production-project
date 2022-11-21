@@ -13,25 +13,6 @@
    margin: 15px 0 0 30px;
 }
 
-.link {
-   display: flex;
-   align-items: center;
-}
-
-.link:not(:last-child) {
-   margin-bottom: 15px;
-}
-
-.icons {
-   fill: var(--inverted-primary-color);
-   margin-right: 15px;
-}
-
-.linkText {
-   opacity: 1;
-   transition: opacity 0.1s ease-in;
-}
-
 .switchers {
    width: 100%;
    position: absolute;

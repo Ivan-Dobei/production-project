@@ -1,0 +1,25 @@
+.link {
+   display: flex;
+   align-items: center;
+}
+
+.link:not(:last-child) {
+   margin-bottom: 15px;
+}
+
+.icons {
+   fill: var(--inverted-primary-color);
+   margin-right: 15px;
+}
+
+.linkText {
+   opacity: 1;
+   transition: opacity 0.1s ease-in;
+}
+
+.collapse {
+   .linkText {
+      opacity: 0;
+      width: 0;
+   }
+}

@@ -34,6 +34,7 @@ export const withError = Template.bind({});
 withError.args = {};
 withError.decorators = [StoreDecorator({
    loginForm: {username: 'lorem', password: 'ipsum', error: 'Error'},
+
 })];
 
 export const Loading = Template.bind({});

@@ -1,4 +1,4 @@
-import {useCallback, useState} from 'react';
+import {memo, useCallback, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {classNames} from 'shared/lib/classNames/classNames';
 import cls from './NavBar.module.scss';
@@ -11,7 +11,7 @@ interface NavBarProps {
     className?: string
 }
 
-export const NavBar = ({className}: NavBarProps) => {
+export const NavBar = memo(({className}: NavBarProps) => {
 
    const {t} = useTranslation();
    const [isAuthModal, setIsAuthModal] = useState(false);
@@ -28,7 +28,6 @@ export const NavBar = ({className}: NavBarProps) => {
 
    const logout = useCallback(() => {
       dispatch(userActions.logout());
-      setIsAuthModal(false);
    }, [dispatch]);
 
    if (authData) {
@@ -63,4 +62,4 @@ export const NavBar = ({className}: NavBarProps) => {
          }
       </div>
    );
-};
+});
