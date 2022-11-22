@@ -1,6 +1,6 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {Input} from './Input';
+import {Input, InputTheme} from './Input';
 
 export default {
    title: 'shared/Input',
@@ -15,4 +15,10 @@ const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
    value: 'Text',
+};
+
+export const Clear = Template.bind({});
+Clear.args = {
+   value: 'Text',
+   theme: InputTheme.CLEAR,
 };

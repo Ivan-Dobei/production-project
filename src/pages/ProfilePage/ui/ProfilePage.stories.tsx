@@ -17,8 +17,16 @@ const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
+Primary.decorators = [StoreDecorator({
+   profile: {
+      data: {firstname: 'Lorem', lastname: 'Ipsum'},
+   },
+})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+   profile: {
+      data: {firstname: 'Lorem', lastname: 'Ipsum'},
+   },
+})];

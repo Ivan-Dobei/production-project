@@ -1,5 +1,4 @@
 import {LoginSchema} from '../types/LoginSchema';
-import {DeepPartial} from '@reduxjs/toolkit';
 import {loginActions, loginReducer} from './loginSlice';
 
 describe('loginSlice.test', () => {

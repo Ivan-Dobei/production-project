@@ -1,5 +1,5 @@
-import React, {lazy, ReactNode, useCallback, useEffect, useRef, useState} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import React, {lazy, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState} from 'react';
+import {classNames, Mods} from 'shared/lib/classNames/classNames';
 import cls from './Modal.module.scss';
 import {Portal} from 'shared/ui/Portal/Portal';
 
@@ -20,11 +20,12 @@ export const Modal = (props: ModalProps) => {
       className,
       isOpen,
       onClose,
+      lazy,
    } = props;
 
    const [isMounted, setIsMounted] = useState(false);
    const [isModalClose, setIsModalClose] = useState(false);
-   const timeRef = useRef<ReturnType<typeof setTimeout>>();
+   const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
    const closeHandler = useCallback(() => {
       if (onClose) {
@@ -61,7 +62,7 @@ export const Modal = (props: ModalProps) => {
       e.stopPropagation();
    };
 
-   const mods:Record<string, boolean> = {
+   const mods: Mods = {
       [cls.open]: isOpen,
       [cls.close]: isModalClose,
    };

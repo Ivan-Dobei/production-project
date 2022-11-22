@@ -4,10 +4,16 @@ import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
 
+export enum InputTheme {
+   'PRIMARY' = 'primary',
+   'CLEAR' = 'clear',
+}
+
 interface InputProps extends HTMLInputProps{
     className?: string;
     value?: string;
     onChange?: (value: string) => void;
+    theme?: InputTheme;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -17,6 +23,7 @@ export const Input = memo((props: InputProps) => {
       onChange,
       type = 'text',
       placeholder,
+      theme = InputTheme.PRIMARY,
       ...otherProps
    } = props;
 
@@ -27,7 +34,7 @@ export const Input = memo((props: InputProps) => {
    return (
       <label className={classNames(cls.InputWrapper, {}, [className])}>
          <input
-            className={cls.input}
+            className={classNames(cls.input, {}, [cls[theme]])}
             type={type}
             placeholder={placeholder}
             value={value}
