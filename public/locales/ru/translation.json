@@ -13,5 +13,6 @@
   "Logout": "Выйти",
   "Auth Form": "Форма авторизации",
   "Invalid login or password": "Неверный логин или пароль",
-  "Profile page": "Профиль"
+  "Profile page": "Профиль",
+  "Articles page": "Статьи"
 }
